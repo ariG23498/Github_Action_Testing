@@ -1,10 +1,17 @@
+name: artifacts-render
+on:
+  workflow_dispatch:
+    inputs:
+      name: 'Person to greet'
+      required: true
+      default: 'World'
 jobs:
-  artifacts:
-    name: Save output
+  create-artifacts:
+    runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
-          expr 1 + 1 > output.log
+         echo "Hello ${{ github.event.inputs.name }}!" >> output.log
       - name: Upload output file
         uses: actions/upload-artifact@v1
         with:
