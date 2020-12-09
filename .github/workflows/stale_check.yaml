@@ -1,7 +1,7 @@
 name: 60 Days Stale Check
 on:
   schedule:
-    - cron: '0 0 * * *' # Run each day at 0:00 UTC / 5:30 IST
+    - cron: '55 3 * * *' # Run each day at 0:00 UTC / 5:30 IST
   
 jobs:
   stale:
