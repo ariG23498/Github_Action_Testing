@@ -13,9 +13,6 @@ jobs:
           stale-issue-message: 'This issue is stale because it has been open 1 days with no activity.'
           stale-pr-message: 'This PR is stale because it has been open 1 days with no activity.'
           days-before-stale: 1
-          days-before-close: -1
-          only-labels: 'engineering'
-          stale-issue-label: 'stale'
-          stale-pr-label: 'stale'
-          exempt-pr-labels: 'never-stale'
-          exempt-issue-labels: 'never-stale'
+          days-before-close: 7
+          stale-issue-label: 'stale_issue'
+          stale-pr-label: 'stale_pr'
