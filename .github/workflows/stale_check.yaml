@@ -1,0 +1,21 @@
+name: 60 Days Stale Check
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run each day at 0:00 UTC / 5:30 IST
+  
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@af4072615903a8b031f986d25b1ae3bf45ec44d4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: 'This issue is stale because it has been open 1 days with no activity.'
+          stale-pr-message: 'This PR is stale because it has been open 1 days with no activity.'
+          days-before-stale: 1
+          days-before-close: -1
+          only-labels: 'engineering'
+          stale-issue-label: 'stale'
+          stale-pr-label: 'stale'
+          exempt-pr-labels: 'never-stale'
+          exempt-issue-labels: 'never-stale'
